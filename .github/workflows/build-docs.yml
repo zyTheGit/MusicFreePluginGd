@@ -50,3 +50,25 @@ jobs:
           cp plugins.json docs/
           # 3. 将 dist 目录下的所有文件（包括隐藏文件）复制到 docs 文件夹
           cp -a dist/. docs/
+    
+      # 第六步：提交并推送 docs 文件夹的更改
+      - name: Commit and push changes
+        run: |
+          # 1. 配置 Git 用户信息，这样才能提交
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          
+          # 2. 将所有 docs 文件夹下的更改添加到暂存区
+          git add docs
+          
+          # 3. 检查是否有文件变动。如果没有变动，则退出，避免创建空提交
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          
+          # 4. 创建一个新的 commit
+          git commit -m "docs: Auto-build and deploy from commit ${{ github.sha }}"
+          
+          # 5. 将新的 commit 推送到 main 分支
+          git push
