@@ -1,1 +1,241 @@
-var $7cxa4$axios=require("axios"),$7cxa4$qs=require("qs");function $parcel$export(e,r,t,a){Object.defineProperty(e,r,{get:t,set:a,enumerable:!0,configurable:!0})}function $parcel$interopDefault(e){return e&&e.__esModule?e.default:e}function $parcel$defineInteropFlag(e){Object.defineProperty(e,"__esModule",{value:!0,configurable:!0})}var $parcel$global=globalThis,$parcel$modules={},$parcel$inits={},parcelRequire=$parcel$global.parcelRequirebc71;null==parcelRequire&&((parcelRequire=function(e){if(e in $parcel$modules)return $parcel$modules[e].exports;if(e in $parcel$inits){var r=$parcel$inits[e];delete $parcel$inits[e];var t={id:e,exports:{}};return $parcel$modules[e]=t,r.call(t.exports,t,t.exports),t.exports}var a=Error("Cannot find module '"+e+"'");throw a.code="MODULE_NOT_FOUND",a}).register=function(e,r){$parcel$inits[e]=r},$parcel$global.parcelRequirebc71=parcelRequire);var parcelRegister=parcelRequire.register;parcelRegister("k65Bm",function(e,r){$parcel$export(e.exports,"defaultConfig",()=>a),$parcel$export(e.exports,"pluginConfig",()=>o),$parcel$export(e.exports,"search",()=>c),$parcel$export(e.exports,"getMediaSource",()=>l),$parcel$export(e.exports,"getMusicInfo",()=>i),$parcel$export(e.exports,"getLyric",()=>s);var t=parcelRequire("aNUP8");let a={source:t.sourceMap.netease,s:"731FED2C"},o={version:"0.0.1",defaultSearchType:"music",supportedSearchType:["music","album","sheet"],srcUrl:"https://raw.githubusercontent.com/zyTheGit/MusicFreePluginGd/refs/heads/main/docs/plugins.json"},c=async function(e,r,o){let c={music:a.source,album:`${a.source}_album`,sheet:`${a.source}_playlist`};try{let l=await t.requestApi.search({count:20,pages:r,name:e,types:"search",source:c[o]||a.source,s:a.s});return{data:l,isEnd:0===l.length}}catch(e){return console.log("search.error",e),e}},l=async function(e,r){try{let o=await t.requestApi.getMediaSource({types:"url",source:a.source,id:e.id,br:t.qualityMap[r],s:a.s});return console.log(o),{url:o.url,quality:o.br}}catch(e){return console.log("getMediaSource.error",e),e}},i=async function(e){try{let r=await t.requestApi.getMusicInfo({types:"info",source:a.source,id:e.pic_id,size:300,s:a.s});return console.log(r),{artwork:r.url}}catch(e){return console.log("getMusicInfo.error",e),e}},s=async function(e){try{let r=await t.requestApi.getLyric({types:"lyric",source:a.source,id:e.lyric_id,s:"5CFA6F10"});return console.log(r),{lrc:r.lyric,rawLrc:r.tlyric}}catch(e){return console.log("getLyric.error",e),e}}}),parcelRegister("aNUP8",function(e,r){$parcel$export(e.exports,"sourceMap",()=>a),$parcel$export(e.exports,"qualityMap",()=>o),$parcel$export(e.exports,"requestApi",()=>c);let t="https://music-api.gdstudio.xyz/api.php",a={netease:"netease",kuwo:"kuwo",tencent:"tencent",tidal:"Tidal",qobuz:"Qobuz",spotify:"Spotify"},o={low:"192",standard:"320",high:"740",super:"999"},c={search:e=>$parcel$interopDefault($7cxa4$axios)({method:"POST",url:t,data:$parcel$interopDefault($7cxa4$qs).stringify(e)}).then(({data:e})=>e.map(e=>{let r=e.artist,t=r.length>0?r[0]:"";return{...e,artist:t,title:e.name}})),getMediaSource:e=>$parcel$interopDefault($7cxa4$axios)({method:"POST",url:t,data:$parcel$interopDefault($7cxa4$qs).stringify(e)}).then(({data:e})=>e),getMusicInfo:e=>$parcel$interopDefault($7cxa4$axios)({method:"POST",url:t,data:$parcel$interopDefault($7cxa4$qs).stringify(e)}).then(({data:e})=>e),getLyric:e=>$parcel$interopDefault($7cxa4$axios)({method:"POST",url:t,data:$parcel$interopDefault($7cxa4$qs).stringify(e)}).then(({data:e})=>e)}}),$parcel$defineInteropFlag(module.exports),$parcel$export(module.exports,"default",()=>$b939bf22d8090e8b$export$2e2bcd8739ae039);var $k65Bm=parcelRequire("k65Bm"),$aNUP8=parcelRequire("aNUP8");let{defaultConfig:$b939bf22d8090e8b$var$defaultConfig,pluginConfig:$b939bf22d8090e8b$var$pluginConfig,...$b939bf22d8090e8b$var$optMethods}=$k65Bm;$b939bf22d8090e8b$var$defaultConfig.source=$aNUP8.sourceMap.qobuz;let $b939bf22d8090e8b$var$pluginInstance={platform:"阿九QOBUZ",...$b939bf22d8090e8b$var$pluginConfig,...$b939bf22d8090e8b$var$optMethods};var $b939bf22d8090e8b$export$2e2bcd8739ae039=$b939bf22d8090e8b$var$pluginInstance;
+var $37ozM$axios = require("axios");
+var $37ozM$qs = require("qs");
+
+
+function $parcel$export(e, n, v, s) {
+  Object.defineProperty(e, n, {get: v, set: s, enumerable: true, configurable: true});
+}
+
+function $parcel$interopDefault(a) {
+  return a && a.__esModule ? a.default : a;
+}
+
+function $parcel$defineInteropFlag(a) {
+  Object.defineProperty(a, '__esModule', {value: true, configurable: true});
+}
+
+      var $parcel$global = globalThis;
+    
+var $parcel$modules = {};
+var $parcel$inits = {};
+
+var parcelRequire = $parcel$global["parcelRequirebc71"];
+
+if (parcelRequire == null) {
+  parcelRequire = function(id) {
+    if (id in $parcel$modules) {
+      return $parcel$modules[id].exports;
+    }
+    if (id in $parcel$inits) {
+      var init = $parcel$inits[id];
+      delete $parcel$inits[id];
+      var module = {id: id, exports: {}};
+      $parcel$modules[id] = module;
+      init.call(module.exports, module, module.exports);
+      return module.exports;
+    }
+    var err = new Error("Cannot find module '" + id + "'");
+    err.code = 'MODULE_NOT_FOUND';
+    throw err;
+  };
+
+  parcelRequire.register = function register(id, init) {
+    $parcel$inits[id] = init;
+  };
+
+  $parcel$global["parcelRequirebc71"] = parcelRequire;
+}
+
+var parcelRegister = parcelRequire.register;
+parcelRegister("l5i2x", function(module, exports) {
+
+$parcel$export(module.exports, "defaultConfig", () => $f48a76a71295956c$export$f84bd70098573c5c);
+$parcel$export(module.exports, "pluginConfig", () => $f48a76a71295956c$export$c23fbabe48bd9130);
+$parcel$export(module.exports, "search", () => $f48a76a71295956c$export$d76128d007d19019);
+$parcel$export(module.exports, "getMediaSource", () => $f48a76a71295956c$export$a92854129bc50f89);
+$parcel$export(module.exports, "getMusicInfo", () => $f48a76a71295956c$export$cec695f762a1db32);
+$parcel$export(module.exports, "getLyric", () => $f48a76a71295956c$export$dd8877a67b94ca98);
+// import cheerio from "cheerio";
+// import cryptojs from "crypto-js";
+// import dayjs from "dayjs";
+// import bigInt from "big-integer";
+// import he from "he";
+// import qs from "qs";
+
+var $8ItRl = parcelRequire("8ItRl");
+const $f48a76a71295956c$export$f84bd70098573c5c = {
+    source: (0, $8ItRl.sourceMap).netease,
+    s: "731FED2C"
+};
+const $f48a76a71295956c$export$c23fbabe48bd9130 = {
+    version: "0.0.1",
+    defaultSearchType: "music",
+    supportedSearchType: [
+        "music",
+        "album",
+        "sheet"
+    ],
+    srcUrl: "https://raw.githubusercontent.com/zyTheGit/MusicFreePluginGd/refs/heads/main/docs/plugins.json"
+};
+const $f48a76a71295956c$export$d76128d007d19019 = async function(query, page, type) {
+    const typeMap = {
+        music: $f48a76a71295956c$export$f84bd70098573c5c.source,
+        album: `${$f48a76a71295956c$export$f84bd70098573c5c.source}_album`,
+        sheet: `${$f48a76a71295956c$export$f84bd70098573c5c.source}_playlist`
+    };
+    try {
+        const data = await (0, $8ItRl.requestApi).search({
+            count: 20,
+            pages: page,
+            name: query,
+            types: "search",
+            source: typeMap[type] || $f48a76a71295956c$export$f84bd70098573c5c.source,
+            s: $f48a76a71295956c$export$f84bd70098573c5c.s
+        });
+        return {
+            data: data,
+            isEnd: data.length === 0
+        };
+    } catch (error) {
+        console.log("search.error", error);
+        return error;
+    }
+};
+const $f48a76a71295956c$export$a92854129bc50f89 = async function(musicItem, quality) {
+    try {
+        const data = await (0, $8ItRl.requestApi).getMediaSource({
+            types: "url",
+            source: $f48a76a71295956c$export$f84bd70098573c5c.source,
+            id: musicItem.id,
+            br: (0, $8ItRl.qualityMap)[quality],
+            s: $f48a76a71295956c$export$f84bd70098573c5c.s
+        });
+        console.log(data);
+        return {
+            url: data.url,
+            quality: data.br
+        };
+    } catch (error) {
+        console.log("getMediaSource.error", error);
+        return error;
+    }
+};
+const $f48a76a71295956c$export$cec695f762a1db32 = async function(musicItem) {
+    try {
+        const data = await (0, $8ItRl.requestApi).getMusicInfo({
+            types: "info",
+            source: $f48a76a71295956c$export$f84bd70098573c5c.source,
+            id: musicItem.pic_id,
+            size: 300,
+            s: $f48a76a71295956c$export$f84bd70098573c5c.s
+        });
+        console.log(data);
+        return {
+            artwork: data.url
+        };
+    } catch (error) {
+        console.log("getMusicInfo.error", error);
+        return error;
+    }
+};
+const $f48a76a71295956c$export$dd8877a67b94ca98 = async function(musicItem) {
+    try {
+        const data = await (0, $8ItRl.requestApi).getLyric({
+            types: "lyric",
+            source: $f48a76a71295956c$export$f84bd70098573c5c.source,
+            id: musicItem.lyric_id,
+            s: "5CFA6F10"
+        });
+        console.log(data);
+        return {
+            lrc: data.lyric,
+            rawLrc: data.tlyric
+        };
+    } catch (error) {
+        console.log("getLyric.error", error);
+        return error;
+    }
+};
+
+});
+parcelRegister("8ItRl", function(module, exports) {
+
+$parcel$export(module.exports, "sourceMap", () => $969787c686ce746c$export$117dd3e0b12ec7ec);
+$parcel$export(module.exports, "qualityMap", () => $969787c686ce746c$export$1a81cd0510c0eb4);
+$parcel$export(module.exports, "requestApi", () => $969787c686ce746c$export$c5fbcfb2b492c83d);
+
+
+const $969787c686ce746c$var$GD_SOURCE_URL = "https://music-api.gdstudio.xyz/api.php";
+const $969787c686ce746c$export$117dd3e0b12ec7ec = {
+    netease: "netease",
+    kuwo: "kuwo",
+    tencent: "tencent",
+    tidal: "Tidal",
+    qobuz: "Qobuz",
+    spotify: "Spotify"
+};
+const $969787c686ce746c$export$1a81cd0510c0eb4 = {
+    low: "192",
+    standard: "320",
+    high: "740",
+    super: "999"
+};
+const $969787c686ce746c$export$c5fbcfb2b492c83d = {
+    // 搜索
+    search: (params)=>(0, ($parcel$interopDefault($37ozM$axios)))({
+            method: "POST",
+            url: $969787c686ce746c$var$GD_SOURCE_URL,
+            data: (0, ($parcel$interopDefault($37ozM$qs))).stringify(params)
+        }).then(({ data: data })=>{
+            const result = data.map((i)=>{
+                const list = i.artist;
+                let artist = list.length > 0 ? list[0] : "";
+                return {
+                    ...i,
+                    artist: artist,
+                    title: i.name
+                };
+            });
+            return result;
+        }),
+    // 获取音源
+    getMediaSource: (params)=>(0, ($parcel$interopDefault($37ozM$axios)))({
+            method: "POST",
+            url: $969787c686ce746c$var$GD_SOURCE_URL,
+            data: (0, ($parcel$interopDefault($37ozM$qs))).stringify(params)
+        }).then(({ data: data })=>data),
+    // 获取音乐信息
+    getMusicInfo: (params)=>(0, ($parcel$interopDefault($37ozM$axios)))({
+            method: "POST",
+            url: $969787c686ce746c$var$GD_SOURCE_URL,
+            data: (0, ($parcel$interopDefault($37ozM$qs))).stringify(params)
+        }).then(({ data: data })=>data),
+    // 获取歌词
+    getLyric: (params)=>(0, ($parcel$interopDefault($37ozM$axios)))({
+            method: "POST",
+            url: $969787c686ce746c$var$GD_SOURCE_URL,
+            data: (0, ($parcel$interopDefault($37ozM$qs))).stringify(params)
+        }).then(({ data: data })=>data)
+};
+
+});
+
+
+
+$parcel$defineInteropFlag(module.exports);
+
+$parcel$export(module.exports, "default", () => $31fff9d47e3673fa$export$2e2bcd8739ae039);
+
+var $l5i2x = parcelRequire("l5i2x");
+
+var $8ItRl = parcelRequire("8ItRl");
+const { defaultConfig: $31fff9d47e3673fa$var$defaultConfig, pluginConfig: $31fff9d47e3673fa$var$pluginConfig, ...$31fff9d47e3673fa$var$optMethods } = $l5i2x;
+$31fff9d47e3673fa$var$defaultConfig.source = (0, $8ItRl.sourceMap).qobuz;
+const $31fff9d47e3673fa$var$pluginInstance = {
+    platform: "\u963F\u4E5DQOBUZ",
+    ...$31fff9d47e3673fa$var$pluginConfig,
+    ...$31fff9d47e3673fa$var$optMethods
+};
+var $31fff9d47e3673fa$export$2e2bcd8739ae039 = $31fff9d47e3673fa$var$pluginInstance;
+
+
