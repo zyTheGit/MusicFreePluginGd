@@ -1,4 +1,4 @@
-import plugin from "../src/wy";
+import plugin from "../src/qq";
 const { search, getMediaSource, getMusicInfo, getLyric } = plugin;
 console.log(plugin);
 
@@ -21,13 +21,13 @@ search("说书人", 1, "music").then((res) => console.log("search", res));
 //   "standard"
 // ).then((res) => console.log("getMediaSource", res));
 
-// getLyric({
-//   id: 2720146507,
-//   platform: "wy",
-//   name: "说书人 小沈阳",
-//   artist: "ORCA特米",
-//   pic_id: "2720146507",
-// });
+getLyric({
+  id: '003LNyT72BedPa',
+  platform: "qq",
+  name: "说书人 (说不完这人间沧桑)",
+  artist: "大双二双",
+  lyric_id: "003LNyT72BedPa",
+});
 
 // getMusicInfo({
 //   id: 2720146507,

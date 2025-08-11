@@ -100,6 +100,7 @@ export const getLyric = async function (
   musicItem: IMusic.IMusicItemPartial
 ): Promise<ILyric.ILyricSource | null> {
   try {
+    alert(JSON.stringify(musicItem));
     const data = await requestApi.getLyric({
       types: "lyric",
       source: defaultConfig.source,
