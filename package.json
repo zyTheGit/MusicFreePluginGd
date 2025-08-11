@@ -45,7 +45,6 @@
       "outputFormat": "commonjs",
       "isLibrary": true,
       "sourceMap": false,
-      "optimize": true,
       "includeNodeModules": {
         "@react-native-cookies/cookies": false,
         "axios": false,
