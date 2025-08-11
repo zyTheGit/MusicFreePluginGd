@@ -16,7 +16,7 @@ export const pluginConfig: Partial<IPlugin.IPluginDefine> = {
   defaultSearchType: "music",
   supportedSearchType: ["music", "album", "sheet"],
   srcUrl:
-    "https://raw.githubusercontent.com/zyTheGit/MusicFreePluginGd/refs/heads/main/docs/plugins.json",
+    "https://hub.gitmirror.com/raw.githubusercontent.com/zyTheGit/MusicFreePluginGd/refs/heads/main/docs/plugins.json",
 };
 
 // 注意：不要使用async () => {}，hermes不支持异步箭头函数
