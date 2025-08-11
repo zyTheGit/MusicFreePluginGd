@@ -1,0 +1,29 @@
+{
+  "plugins": [
+    {
+      "name": "阿九WY",
+      "url": "http://192.168.3.191:8080/dist/wy.js",
+      "version": "0.0.1"
+    },
+    {
+      "name": "阿九QQ",
+      "url": "http://192.168.3.191:8080/dist/wy.js",
+      "version": "0.0.1"
+    },
+    {
+      "name": "阿九KW",
+      "url": "http://192.168.3.191:8080/dist/kuwo.js",
+      "version": "0.0.1"
+    },
+    {
+      "name": "阿九TIDAL",
+      "url": "http://192.168.3.191:8080/dist/tidal.js",
+      "version": "0.0.1"
+    },
+    {
+      "name": "阿九QOBUZ",
+      "url": "http://192.168.3.191:8080/dist/qobuz.js",
+      "version": "0.0.1"
+    }
+  ]
+}
