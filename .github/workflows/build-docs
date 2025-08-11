@@ -1,0 +1,73 @@
+# .github/workflows/build-docs.yml
+
+# 1. Workflow 的名称
+name: Build and Deploy to Docs
+
+# 2. 触发工作流的事件
+on:
+  push:
+    branches:
+      - main  # 只在 main 分支被推送时触发
+
+# 3. 定义一个或多个 "jobs" (任务)
+jobs:
+  build-and-deploy:
+    # 指定运行此任务的虚拟机环境
+    runs-on: ubuntu-latest
+
+    # 定义任务中的步骤
+    steps:
+      # 第一步：检出代码
+      # 使用官方的 checkout action 将仓库代码拉取到虚拟机中
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 第二步：设置 Node.js 环境
+      # 使用 setup-node action，它会自动读取 .node-version 文件来安装正确的 Node 版本
+      - name: Setup Node.js from .node-version
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.node-version' # 指定版本文件的路径
+          cache: 'npm' # 启用 npm 依赖缓存，加快后续构建速度
+
+      # 第三步：安装项目依赖
+      # 运行 npm ci 命令，它比 npm install 更快、更可靠，专门用于自动化环境
+      - name: Install dependencies
+        run: npm ci
+
+      # 第四步：执行构建命令
+      # 运行 package.json 中定义的 build 脚本
+      - name: Build project
+        run: npm run build
+
+      # 第五步：将构建产物复制到 docs 文件夹
+      - name: Deploy to docs folder
+        run: |
+          # 1. 删除旧的 docs 文件夹（如果存在），防止旧文件残留
+          rm -rf docs
+          # 2. 创建一个新的空 docs 文件夹
+          mkdir docs
+          # 3. 将 dist 目录下的所有文件（包括隐藏文件）复制到 docs 文件夹
+          cp -a dist/. docs/
+
+      # 第六步：提交并推送 docs 文件夹的更改
+      - name: Commit and push changes
+        run: |
+          # 1. 配置 Git 用户信息，这样才能提交
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          
+          # 2. 将所有 docs 文件夹下的更改添加到暂存区
+          git add docs
+          
+          # 3. 检查是否有文件变动。如果没有变动，则退出，避免创建空提交
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          
+          # 4. 创建一个新的 commit
+          git commit -m "docs: Auto-build and deploy from commit ${{ github.sha }}"
+          
+          # 5. 将新的 commit 推送到 main 分支
+          git push
