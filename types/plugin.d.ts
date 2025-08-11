@@ -74,7 +74,7 @@ declare namespace IArtist {
 
 declare namespace ILyric {
   interface ILyricSource {
-    lrc?: string;
+    translation?: string;
     rawLrc?: string;
   }
 

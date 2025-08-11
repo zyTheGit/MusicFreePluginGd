@@ -97,10 +97,9 @@ export const getMusicInfo = async function (
 
 // 获取歌词
 export const getLyric = async function (
-  musicItem: IMusic.IMusicItemPartial
+  musicItem: IMusic.IMusicItem
 ): Promise<ILyric.ILyricSource | null> {
   try {
-    alert(JSON.stringify(musicItem));
     const data = await requestApi.getLyric({
       types: "lyric",
       source: defaultConfig.source,
@@ -109,8 +108,8 @@ export const getLyric = async function (
     });
     console.log(data);
     return {
-      lrc: data.lyric,
-      rawLrc: data.tlyric,
+      rawLrc: data.lyric,
+      translation: data.tlyric,
     };
   } catch (error) {
     console.log("getLyric.error", error);
