@@ -11,6 +11,14 @@ export const defaultConfig = {
   s: "731FED2C", // 签名
 };
 
+export const pluginConfig = {
+  version: "0.0.1",
+  defaultSearchType:'music',
+  supportedSearchType: ["music", "album", "sheet"],
+  srcUrl:
+    "https://raw.githubusercontent.com/zyTheGit/MusicFreePluginGd/refs/heads/main/docs/plugins.json",
+};
+
 // 注意：不要使用async () => {}，hermes不支持异步箭头函数
 export const search: IPlugin.ISearchFunc = async function (
   query,

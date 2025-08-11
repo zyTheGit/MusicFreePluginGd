@@ -7,7 +7,6 @@ defaultConfig.source = sourceMap.tencent;
 
 const pluginInstance: IPlugin.IPluginDefine = {
   platform: "阿九QQ",
-  version: "0.0.1",
   ...optMethods
 };
 

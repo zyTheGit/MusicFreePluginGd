@@ -6,7 +6,6 @@ defaultConfig.source = sourceMap.qobuz;
 
 const pluginInstance: IPlugin.IPluginDefine = {
   platform: "阿九QOBUZ",
-  version: "0.0.1",
   ...optMethods
 };
 

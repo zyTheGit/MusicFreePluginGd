@@ -6,8 +6,7 @@ defaultConfig.source = sourceMap.kuwo;
 
 const pluginInstance: IPlugin.IPluginDefine = {
   platform: "阿九KW",
-  version: "0.0.1",
-  ...optMethods
+  ...optMethods,
 };
 
 export default pluginInstance;

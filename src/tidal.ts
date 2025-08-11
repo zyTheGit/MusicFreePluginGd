@@ -6,7 +6,6 @@ defaultConfig.source = sourceMap.tidal;
 
 const pluginInstance: IPlugin.IPluginDefine = {
   platform: "阿九TIDAL",
-  version: "0.0.1",
   ...optMethods
 };
 
