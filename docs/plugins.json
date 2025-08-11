@@ -1,5 +1,5 @@
 {
-  "desc": "此链接为 MusicFree 插件",
+  "desc": "阿九的MusicFree插件",
   "plugins": [
     {
       "name": "阿九WY",
@@ -8,7 +8,7 @@
     },
     {
       "name": "阿九QQ",
-      "url": "https://raw.githubusercontent.com/zyTheGit/MusicFreePluginGd/refs/heads/main/docs/wy.js",
+      "url": "https://raw.githubusercontent.com/zyTheGit/MusicFreePluginGd/refs/heads/main/docs/qq.js",
       "version": "0.0.1"
     },
     {
