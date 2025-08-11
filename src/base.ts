@@ -11,9 +11,9 @@ export const defaultConfig = {
   s: "731FED2C", // 签名
 };
 
-export const pluginConfig = {
+export const pluginConfig: Partial<IPlugin.IPluginDefine> = {
   version: "0.0.1",
-  defaultSearchType:'music',
+  defaultSearchType: "music",
   supportedSearchType: ["music", "album", "sheet"],
   srcUrl:
     "https://raw.githubusercontent.com/zyTheGit/MusicFreePluginGd/refs/heads/main/docs/plugins.json",
