@@ -3,27 +3,27 @@
   "plugins": [
     {
       "name": "阿九WY",
-      "url": "https://raw.githubusercontent.com/zyTheGit/MusicFreePluginGd/refs/heads/main/docs/wy.js",
+      "url": "https://hub.gitmirror.com/raw.githubusercontent.com/zyTheGit/MusicFreePluginGd/refs/heads/main/docs/wy.js",
       "version": "0.0.1"
     },
     {
       "name": "阿九QQ",
-      "url": "https://raw.githubusercontent.com/zyTheGit/MusicFreePluginGd/refs/heads/main/docs/qq.js",
+      "url": "https://hub.gitmirror.com/raw.githubusercontent.com/zyTheGit/MusicFreePluginGd/refs/heads/main/docs/qq.js",
       "version": "0.0.1"
     },
     {
       "name": "阿九KW",
-      "url": "https://raw.githubusercontent.com/zyTheGit/MusicFreePluginGd/refs/heads/main/docs/kuwo.js",
+      "url": "https://hub.gitmirror.com/raw.githubusercontent.com/zyTheGit/MusicFreePluginGd/refs/heads/main/docs/kuwo.js",
       "version": "0.0.1"
     },
     {
       "name": "阿九TIDAL",
-      "url": "https://raw.githubusercontent.com/zyTheGit/MusicFreePluginGd/refs/heads/main/docs/tidal.js",
+      "url": "https://hub.gitmirror.com/raw.githubusercontent.com/zyTheGit/MusicFreePluginGd/refs/heads/main/docs/tidal.js",
       "version": "0.0.1"
     },
     {
       "name": "阿九QOBUZ",
-      "url": "https://raw.githubusercontent.com/zyTheGit/MusicFreePluginGd/refs/heads/main/docs/qobuz.js",
+      "url": "https://hub.gitmirror.com/raw.githubusercontent.com/zyTheGit/MusicFreePluginGd/refs/heads/main/docs/qobuz.js",
       "version": "0.0.1"
     }
   ]
